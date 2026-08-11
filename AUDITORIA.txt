@@ -1,0 +1,34 @@
+AUDITORIA PAGESPEED & SEO OPTIMIZER
+
+Fonte: index.html
+HTML antes: 3.50 MB
+HTML depois: 63.2 KB
+WebP externos únicos: 10
+Peso total WebP: 1451.4 KB
+Title: Jucelio Silva — Cabeleireiro & Colorista | Pedreiras, MA
+Description: Jucelio Silva, cabeleireiro e colorista em Pedreiras - MA. Especialista em mechas, morena iluminada, correção de cor e Mega Hair.
+H1 encontrados: 1
+Canonical: https://devkanda.github.io/sitejuceliosilva/
+
+Aplicado:
+- charset UTF-8 no início do head
+- lang pt-BR
+- imagens Base64 extraídas para WebP externos
+- width/height explícitos nas imagens
+- hero sem lazy loading e com fetchpriority=high
+- imagens abaixo da dobra com loading=lazy
+- Google Fonts removido do caminho crítico; fontes locais do sistema
+- links target=_blank protegidos
+- robots.txt básico
+
+Observação: a nota final do PageSpeed depende de publicar esta pasta e testar a URL pública.
+- jucelio-hero.webp: 79.5 KB -> 69.1 KB | 900x1600 -> 900x1600
+- jucelio-sobre.webp: 65.0 KB -> 56.4 KB | 1284x1284 -> 1284x1284
+- resultado-01-antes.webp: 61.3 KB -> 52.1 KB | 960x1280 -> 960x1280
+- resultado-01-depois.webp: 127.0 KB -> 116.0 KB | 960x1280 -> 960x1280
+- resultado-02-antes.webp: 95.6 KB -> 81.6 KB | 1200x1600 -> 1200x1600
+- resultado-02-depois.webp: 319.4 KB -> 303.6 KB | 1200x1600 -> 1200x1600
+- resultado-03-antes.webp: 188.5 KB -> 172.5 KB | 1200x1600 -> 1200x1600
+- resultado-03-depois.webp: 262.5 KB -> 243.0 KB | 1200x1600 -> 1200x1600
+- mega-hair-antes.webp: 239.2 KB -> 223.5 KB | 1200x1600 -> 1200x1600
+- mega-hair-depois.webp: 150.3 KB -> 133.5 KB | 976x1600 -> 976x1600
