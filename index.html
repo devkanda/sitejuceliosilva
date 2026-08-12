@@ -1415,6 +1415,92 @@
     }
   }
 
+
+  /* ============ POLIMENTO FINAL ============ */
+
+  .other-services-groups{
+    display:grid;
+    grid-template-columns:1.1fr 1.1fr .8fr;
+    gap:0;
+    border-top:1px solid rgba(17,17,17,.12);
+    border-bottom:1px solid rgba(17,17,17,.12);
+  }
+
+  .other-service-group{
+    padding:30px 28px 30px 0;
+  }
+
+  .other-service-group:not(:last-child){
+    border-right:1px solid rgba(17,17,17,.12);
+    margin-right:28px;
+  }
+
+  .other-service-group h3{
+    font-family:var(--sans);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--gray);
+    margin-bottom:16px;
+  }
+
+  .other-service-group ul{
+    columns:1;
+    border:0;
+  }
+
+  .other-service-group li{
+    padding:8px 0;
+    border:0;
+    font-family:var(--serif);
+    font-size:20px;
+    line-height:1.25;
+  }
+
+  @media (max-width:980px){
+    .other-services-groups{
+      grid-template-columns:1fr 1fr;
+    }
+
+    .other-service-group{
+      padding:26px 22px 26px 0;
+    }
+
+    .other-service-group:not(:last-child){
+      margin-right:22px;
+    }
+
+    .other-service-group:last-child{
+      grid-column:1 / -1;
+      border-top:1px solid rgba(17,17,17,.12);
+    }
+  }
+
+  @media (max-width:560px){
+    .other-services-groups{
+      grid-template-columns:1fr;
+    }
+
+    .other-service-group,
+    .other-service-group:not(:last-child){
+      margin-right:0;
+      padding:22px 0;
+      border-right:0;
+      border-bottom:1px solid rgba(17,17,17,.12);
+    }
+
+    .other-service-group:last-child{
+      grid-column:auto;
+      border-top:0;
+      border-bottom:0;
+    }
+
+    .other-service-group li{
+      font-size:19px;
+    }
+  }
+
   :focus-visible{
     outline:2px solid var(--black);
     outline-offset:3px;
@@ -1544,10 +1630,10 @@
 <div class="container">
 <h2 class="reveal">Colorimetria, técnica e cuidado em cada transformação.</h2>
 <div class="spec-row reveal">
-<div class="spec-item"><span class="spec-num">01</span><h3>Mechas</h3></div>
-<div class="spec-item"><span class="spec-num">02</span><h3>Morena Iluminada</h3></div>
-<div class="spec-item"><span class="spec-num">03</span><h3>Correção de Cor</h3></div>
-<div class="spec-item"><span class="spec-num">04</span><h3>Coloração</h3></div>
+<div class="spec-item"><span class="spec-num">01</span><h3>Colorimetria</h3></div>
+<div class="spec-item"><span class="spec-num">02</span><h3>Iluminação</h3></div>
+<div class="spec-item"><span class="spec-num">03</span><h3>Correção</h3></div>
+<div class="spec-item"><span class="spec-num">04</span><h3>Transformação</h3></div>
 </div>
 </div>
 </section>
@@ -1706,18 +1792,7 @@
 <span class="eyebrow">Além da cor</span>
 <h2>Cuidados e transformações além da cor</h2>
 </div>
-<ul class="reveal">
-<li>Corte</li>
-<li>Selagem</li>
-<li>Alisamentos definitivos</li>
-<li>Mega Hair</li>
-<li>Terapia Capilar</li>
-<li>Reconstrução</li>
-<li>Nutrição</li>
-<li>Cauterização</li>
-<li>Cronograma Capilar</li>
-<li>Higienização do couro cabeludo</li>
-</ul>
+<div class="other-services-groups"><div class="other-service-group"><h3>Transformação</h3><ul><li>Corte</li><li>Selagem</li><li>Alisamentos definitivos</li><li>Mega Hair</li></ul></div><div class="other-service-group"><h3>Tratamentos</h3><ul><li>Terapia Capilar</li><li>Reconstrução</li><li>Nutrição</li><li>Cauterização</li></ul></div><div class="other-service-group"><h3>Manutenção &amp; cuidado</h3><ul><li>Cronograma Capilar</li><li>Higienização do couro cabeludo</li></ul></div></div>
 </div>
 </section>
 <!-- ============ DIFERENCIAIS ============ -->
@@ -1791,49 +1866,37 @@
 <h2>FAQ</h2>
 </div>
 <div class="faq-list reveal" id="faqList">
+
+
+
 <div class="faq-item">
-<button aria-controls="faq-answer-1" aria-expanded="false" class="faq-q" id="faq-question-1" type="button"><span>Você faz morena iluminada?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-1" class="faq-a" id="faq-answer-1" role="region"><p>Sim. Morena iluminada é uma das técnicas que mais realizo no salão. A proposta é definida de acordo com o cabelo e com o resultado que você busca.</p></div>
+<button aria-controls="faq-answer-1" aria-expanded="false" class="faq-q" id="faq-question-1" type="button"><span>Posso fazer uma mudança de cor se já tenho química no cabelo?</span><span class="icon">+</span></button>
+<div aria-labelledby="faq-question-1" class="faq-a" id="faq-answer-1" role="region"><p>Depende do histórico e das condições atuais do fio. Por isso, o ideal é conversar antes e, se possível, enviar fotos para uma avaliação.</p></div>
 </div>
 <div class="faq-item">
-<button aria-controls="faq-answer-2" aria-expanded="false" class="faq-q" id="faq-question-2" type="button"><span>Você faz mechas?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-2" class="faq-a" id="faq-answer-2" role="region"><p>Sim. Mechas são uma das minhas principais áreas de atuação, incluindo diferentes propostas de iluminação e mechas invertidas.</p></div>
+<button aria-controls="faq-answer-2" aria-expanded="false" class="faq-q" id="faq-question-2" type="button"><span>Você faz Mega Hair?</span><span class="icon">+</span></button>
+<div aria-labelledby="faq-question-2" class="faq-a" id="faq-answer-2" role="region"><p>Sim. Trabalho com Mega Hair para quem busca mudanças de comprimento e volume.</p></div>
+</div>
+
+<div class="faq-item">
+<button aria-controls="faq-answer-3" aria-expanded="false" class="faq-q" id="faq-question-3" type="button"><span>Quais tratamentos capilares você oferece?</span><span class="icon">+</span></button>
+<div aria-labelledby="faq-question-3" class="faq-a" id="faq-answer-3" role="region"><p>Trabalho com terapia capilar, reconstrução, nutrição, cauterização, cronograma capilar e higienização do couro cabeludo.</p></div>
 </div>
 <div class="faq-item">
-<button aria-controls="faq-answer-3" aria-expanded="false" class="faq-q" id="faq-question-3" type="button"><span>Você faz correção de cor?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-3" class="faq-a" id="faq-answer-3" role="region"><p>Sim. Avalio cada caso individualmente, considerando o histórico químico e as condições atuais do cabelo antes de definir o procedimento.</p></div>
+<button aria-controls="faq-answer-4" aria-expanded="false" class="faq-q" id="faq-question-4" type="button"><span>Não sei qual serviço fazer. Você pode me orientar?</span><span class="icon">+</span></button>
+<div aria-labelledby="faq-question-4" class="faq-a" id="faq-answer-4" role="region"><p>Sim. Pode me chamar pelo WhatsApp, contar o que gostaria de mudar e enviar referências. A partir daí, conversamos sobre as possibilidades para o seu cabelo.</p></div>
 </div>
 <div class="faq-item">
-<button aria-controls="faq-answer-4" aria-expanded="false" class="faq-q" id="faq-question-4" type="button"><span>Posso fazer uma mudança de cor se já tenho química no cabelo?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-4" class="faq-a" id="faq-answer-4" role="region"><p>Depende do histórico e das condições atuais do fio. Por isso, o ideal é conversar antes e, se possível, enviar fotos para uma avaliação.</p></div>
+<button aria-controls="faq-answer-5" aria-expanded="false" class="faq-q" id="faq-question-5" type="button"><span>Posso enviar uma foto do cabelo antes de agendar?</span><span class="icon">+</span></button>
+<div aria-labelledby="faq-question-5" class="faq-a" id="faq-answer-5" role="region"><p>Sim, isso ajuda bastante na avaliação inicial e na conversa sobre as possibilidades para o seu cabelo.</p></div>
 </div>
 <div class="faq-item">
-<button aria-controls="faq-answer-5" aria-expanded="false" class="faq-q" id="faq-question-5" type="button"><span>Você faz Mega Hair?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-5" class="faq-a" id="faq-answer-5" role="region"><p>Sim. Trabalho com Mega Hair para quem busca mudanças de comprimento e volume.</p></div>
+<button aria-controls="faq-answer-6" aria-expanded="false" class="faq-q" id="faq-question-6" type="button"><span>Como saber o valor do serviço?</span><span class="icon">+</span></button>
+<div aria-labelledby="faq-question-6" class="faq-a" id="faq-answer-6" role="region"><p>O valor depende da avaliação do cabelo e do procedimento escolhido. Fale pelo WhatsApp para mais detalhes.</p></div>
 </div>
 <div class="faq-item">
-<button aria-controls="faq-answer-6" aria-expanded="false" class="faq-q" id="faq-question-6" type="button"><span>Você faz selagem e alisamento?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-6" class="faq-a" id="faq-answer-6" role="region"><p>Sim. Selagem e alisamentos definitivos fazem parte dos serviços que ofereço.</p></div>
-</div>
-<div class="faq-item">
-<button aria-controls="faq-answer-7" aria-expanded="false" class="faq-q" id="faq-question-7" type="button"><span>Quais tratamentos capilares você oferece?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-7" class="faq-a" id="faq-answer-7" role="region"><p>Trabalho com terapia capilar, reconstrução, nutrição, cauterização, cronograma capilar e higienização do couro cabeludo.</p></div>
-</div>
-<div class="faq-item">
-<button aria-controls="faq-answer-8" aria-expanded="false" class="faq-q" id="faq-question-8" type="button"><span>Não sei qual serviço fazer. Você pode me orientar?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-8" class="faq-a" id="faq-answer-8" role="region"><p>Sim. Pode me chamar pelo WhatsApp, contar o que gostaria de mudar e enviar referências. A partir daí, conversamos sobre as possibilidades para o seu cabelo.</p></div>
-</div>
-<div class="faq-item">
-<button aria-controls="faq-answer-9" aria-expanded="false" class="faq-q" id="faq-question-9" type="button"><span>Posso enviar uma foto do cabelo antes de agendar?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-9" class="faq-a" id="faq-answer-9" role="region"><p>Sim, isso ajuda bastante na avaliação inicial e na conversa sobre as possibilidades para o seu cabelo.</p></div>
-</div>
-<div class="faq-item">
-<button aria-controls="faq-answer-10" aria-expanded="false" class="faq-q" id="faq-question-10" type="button"><span>Como saber o valor do serviço?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-10" class="faq-a" id="faq-answer-10" role="region"><p>O valor depende da avaliação do cabelo e do procedimento escolhido. Fale pelo WhatsApp para mais detalhes.</p></div>
-</div>
-<div class="faq-item">
-<button aria-controls="faq-answer-11" aria-expanded="false" class="faq-q" id="faq-question-11" type="button"><span>Preciso agendar?</span><span class="icon">+</span></button>
-<div aria-labelledby="faq-question-11" class="faq-a" id="faq-answer-11" role="region"><p>Sim, o agendamento é feito pelo WhatsApp para garantir o melhor horário para o seu atendimento.</p></div>
+<button aria-controls="faq-answer-7" aria-expanded="false" class="faq-q" id="faq-question-7" type="button"><span>Preciso agendar?</span><span class="icon">+</span></button>
+<div aria-labelledby="faq-question-7" class="faq-a" id="faq-answer-7" role="region"><p>Sim, o agendamento é feito pelo WhatsApp para garantir o melhor horário para o seu atendimento.</p></div>
 </div>
 </div>
 </div>
