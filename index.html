@@ -1325,16 +1325,6 @@
     color:#000;
   }
 
-  /* Marcadores editoriais discretos */
-  .section-index{
-    display:block;
-    margin-bottom:10px;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:.18em;
-    color:var(--gray);
-  }
-
   /* Mega Hair tratado como case em destaque */
   .case-eyebrow{
     display:inline-flex;
@@ -1401,7 +1391,6 @@
   }
 
   @media (max-width:980px){
-    .section-index{ margin-bottom:8px; }
     .differentials,
     .steps{
       padding:68px 0;
@@ -1617,7 +1606,7 @@
 <!-- ============ ANTES E DEPOIS ============ -->
 <section class="results" id="resultados">
 <div class="container">
-<div class="section-head reveal"><span class="section-index">03 — RESULTADOS</span>
+<div class="section-head reveal">
 <span class="eyebrow">Resultados</span>
 <h2>Transformações que você pode ver.</h2>
 <p>Cada cabelo tem uma história diferente. Confira alguns resultados reais e acompanhe as transformações realizadas no salão.</p>
@@ -1734,7 +1723,7 @@
 <!-- ============ DIFERENCIAIS ============ -->
 <section class="differentials">
 <div class="container">
-<div class="section-head reveal"><span class="section-index">05 — DIFERENCIAIS</span>
+<div class="section-head reveal">
 <span class="eyebrow">Diferenciais</span>
 <h2>Cada cabelo tem uma história.</h2>
 </div>
@@ -1765,7 +1754,7 @@
 <!-- ============ COMO FUNCIONA ============ -->
 <section class="steps">
 <div class="container">
-<div class="section-head reveal"><span class="section-index">06 — COMO FUNCIONA</span>
+<div class="section-head reveal">
 <span class="eyebrow">Como funciona</span>
 <h2>Seu atendimento começa antes da cadeira.</h2>
 </div>
@@ -2096,7 +2085,6 @@
   window.addEventListener('load', start);
 })();
 </script>
-
 <script>
 (function(){
   const links = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
@@ -2135,6 +2123,5 @@
   pairs.forEach(({section}) => observer.observe(section));
 })();
 </script>
-
 </body>
 </html>
