@@ -1313,6 +1313,119 @@
     }
   }
 
+
+  /* ============ REFINO VISUAL / ESTRUTURAL ============ */
+
+  /* Scroll spy: reutiliza a mesma linguagem visual do hover */
+  .nav-links a.active::after{
+    transform:scaleX(1);
+    transform-origin:left;
+  }
+  .nav-links a.active{
+    color:#000;
+  }
+
+  /* Marcadores editoriais discretos */
+  .section-index{
+    display:block;
+    margin-bottom:10px;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.18em;
+    color:var(--gray);
+  }
+
+  /* Mega Hair tratado como case em destaque */
+  .case-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    width:fit-content;
+    margin-bottom:18px;
+    padding:8px 12px;
+    border:1px solid rgba(245,240,232,.22);
+    border-radius:999px;
+    color:rgba(245,240,232,.78);
+    background:rgba(245,240,232,.05);
+    letter-spacing:.13em;
+  }
+  .megahair-copy h2{
+    max-width:12ch;
+  }
+  .megahair-copy p{
+    margin-top:18px;
+  }
+
+  /* Diferenciais: menos altura, mais densidade */
+  .differentials{
+    padding:82px 0;
+  }
+  .differentials .section-head{
+    margin-bottom:38px;
+  }
+  .diff-item{
+    padding:28px 24px;
+  }
+  .diff-item h3{
+    margin-top:12px;
+  }
+  .diff-item p{
+    margin-top:8px;
+    line-height:1.55;
+  }
+
+  /* Como funciona: compacta o bloco e deixa os passos mais horizontais */
+  .steps{
+    padding:82px 0;
+  }
+  .steps .section-head{
+    margin-bottom:38px;
+  }
+  .steps-grid{
+    gap:22px;
+  }
+  .step{
+    position:relative;
+    padding-top:18px;
+    border-top:1px solid rgba(17,17,17,.14);
+  }
+  .step-num{
+    font-size:38px;
+    line-height:1;
+  }
+  .step h3{
+    margin-top:10px;
+  }
+  .step p{
+    margin-top:7px;
+    line-height:1.5;
+  }
+
+  @media (max-width:980px){
+    .section-index{ margin-bottom:8px; }
+    .differentials,
+    .steps{
+      padding:68px 0;
+    }
+    .differentials .section-head,
+    .steps .section-head{
+      margin-bottom:30px;
+    }
+  }
+
+  @media (max-width:560px){
+    .case-eyebrow{
+      padding:7px 10px;
+      font-size:9px;
+      line-height:1.4;
+    }
+    .diff-item{
+      padding:24px 20px;
+    }
+    .steps-grid{
+      gap:26px;
+    }
+  }
+
   :focus-visible{
     outline:2px solid var(--black);
     outline-offset:3px;
@@ -1430,7 +1543,6 @@
 <div class="hero-copy reveal">
 <h1>Colorimetria, transformação e cuidado para os seus cabelos.</h1>
 <p>Mechas, morena iluminada, correção de cor, Mega Hair, selagem e tratamentos capilares com atendimento personalizado em Pedreiras — MA.</p>
-
 </div>
 <div class="hero-media reveal">
 <img alt="Retrato de Jucelio Silva, cabeleireiro e colorista em Pedreiras, MA" class="hero-photo" decoding="async" fetchpriority="high" height="1600" src="assets/images/jucelio-hero.webp" width="900"/>
@@ -1463,7 +1575,6 @@
 <p>Meu trabalho tem como principal foco a área de cor, especialmente mechas, morenas iluminadas, mechas invertidas, correções de cor e coloração em geral.</p>
 <p>Além da colorimetria, também trabalho com selagem, alisamentos, Mega Hair e tratamentos capilares, oferecendo diferentes possibilidades para quem deseja transformar ou cuidar dos fios.</p>
 <p>Cada cabelo possui uma história e características próprias. Por isso, gosto de entender o que você procura e conhecer o seu cabelo antes de definir o melhor caminho para o resultado desejado.</p>
-
 </div>
 </div>
 </section>
@@ -1501,13 +1612,12 @@
 <p>Uma técnica que permite trabalhar novas dimensões de cor e modificar o resultado das mechas existentes.</p>
 </div>
 </div>
-
 </div>
 </section>
 <!-- ============ ANTES E DEPOIS ============ -->
 <section class="results" id="resultados">
 <div class="container">
-<div class="section-head reveal">
+<div class="section-head reveal"><span class="section-index">03 — RESULTADOS</span>
 <span class="eyebrow">Resultados</span>
 <h2>Transformações que você pode ver.</h2>
 <p>Cada cabelo tem uma história diferente. Confira alguns resultados reais e acompanhe as transformações realizadas no salão.</p>
@@ -1593,8 +1703,8 @@
 </figure>
 </div>
 <div class="megahair-copy reveal">
-<span class="eyebrow" style="color:rgba(245,240,232,0.5);">Mega Hair</span>
-<h2>Uma transformação que você consegue ver.</h2>
+<span class="eyebrow case-eyebrow">Destaque · Mega Hair + Correção de Cor</span>
+<h2>Um case de transformação completa.</h2>
 <p>Neste trabalho, o Mega Hair foi combinado com uma correção de cor, unindo a transformação de comprimento ao ajuste da tonalidade para compor o resultado final.</p>
 <a class="btn btn-light wa-link" data-msg="Olá, Jucelio! Gostaria de saber mais sobre Mega Hair." href="#">Saber mais pelo WhatsApp</a>
 </div>
@@ -1619,13 +1729,12 @@
 <li>Cronograma Capilar</li>
 <li>Higienização do couro cabeludo</li>
 </ul>
-
 </div>
 </section>
 <!-- ============ DIFERENCIAIS ============ -->
 <section class="differentials">
 <div class="container">
-<div class="section-head reveal">
+<div class="section-head reveal"><span class="section-index">05 — DIFERENCIAIS</span>
 <span class="eyebrow">Diferenciais</span>
 <h2>Cada cabelo tem uma história.</h2>
 </div>
@@ -1656,7 +1765,7 @@
 <!-- ============ COMO FUNCIONA ============ -->
 <section class="steps">
 <div class="container">
-<div class="section-head reveal">
+<div class="section-head reveal"><span class="section-index">06 — COMO FUNCIONA</span>
 <span class="eyebrow">Como funciona</span>
 <h2>Seu atendimento começa antes da cadeira.</h2>
 </div>
@@ -1682,7 +1791,6 @@
 <p>Escolha seu horário.</p>
 </div>
 </div>
-
 </div>
 </section>
 <!-- Depoimentos removidos até existirem avaliações reais verificadas. -->
@@ -1781,7 +1889,6 @@
 <h2 class="reveal">Pensando em transformar o seu cabelo?</h2>
 <p class="reveal">Se você já sabe o que quer fazer ou ainda está procurando uma ideia, podemos conversar. Envie uma referência, conte o que você gostaria de mudar e tire suas dúvidas diretamente pelo WhatsApp.</p>
 <a class="btn btn-light wa-link reveal" data-msg="Olá, Jucelio! Estou pensando em transformar o meu cabelo e gostaria de conversar." href="#">Fale comigo pelo WhatsApp</a>
-
 </div>
 </section>
 </main>
@@ -1796,7 +1903,6 @@
 <div class="footer-links">
 <div class="footer-col">
 <h3>Contato</h3>
-
 <a href="https://www.instagram.com/juceliosilva/" rel="noopener noreferrer" target="_blank">Instagram</a>
 </div>
 <div class="footer-col">
@@ -1990,5 +2096,45 @@
   window.addEventListener('load', start);
 })();
 </script>
+
+<script>
+(function(){
+  const links = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
+
+  const pairs = links
+    .map(link => {
+      const id = link.getAttribute('href');
+      const section = document.querySelector(id);
+      return section ? { link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (!pairs.length) return;
+
+  function setActive(id){
+    links.forEach(link => {
+      const active = link.getAttribute('href') === id;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a,b) => b.intersectionRatio - a.intersectionRatio);
+
+    if (visible.length) setActive('#' + visible[0].target.id);
+  }, {
+    rootMargin: '-28% 0px -58% 0px',
+    threshold: [0, .05, .2, .5]
+  });
+
+  pairs.forEach(({section}) => observer.observe(section));
+})();
+</script>
+
 </body>
 </html>
