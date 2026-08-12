@@ -1573,12 +1573,7 @@
 <div class="container nav">
 <a class="logo" href="#top">JUCELIO SILVA</a>
 <nav class="nav-links">
-
-
-
-
-
-<a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#resultados">Resultados</a><a href="#visite">Localização</a><a href="#faq">FAQ</a></nav>
+<a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#resultados">Resultados</a><a href="#faq">FAQ</a><a href="#visite">Localização</a></nav>
 <a aria-label="Instagram de Jucelio Silva" class="nav-extra" href="https://www.instagram.com/juceliosilva/" rel="noopener noreferrer" target="_blank">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <defs>
@@ -1605,12 +1600,7 @@
 </header>
 <div aria-hidden="true" class="mobile-menu" id="mobileMenu" inert="">
 <button aria-label="Fechar menu" class="mobile-menu-close" id="mobileMenuClose" type="button"></button>
-
-
-
-
-
-<a class="mobile-link" href="#sobre">Sobre</a><a class="mobile-link" href="#servicos">Serviços</a><a class="mobile-link" href="#resultados">Resultados</a><a class="mobile-link" href="#visite">Localização</a><a class="mobile-link" href="#faq">FAQ</a></div>
+<a class="mobile-link" href="#sobre">Sobre</a><a class="mobile-link" href="#servicos">Serviços</a><a class="mobile-link" href="#resultados">Resultados</a><a class="mobile-link" href="#faq">FAQ</a><a class="mobile-link" href="#visite">Localização</a></div>
 <main id="conteudo">
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
@@ -2143,17 +2133,18 @@
 <script>
 (function(){
   const links = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-  if (!links.length || !('IntersectionObserver' in window)) return;
+  if (!links.length) return;
 
-  const pairs = links
-    .map(link => {
-      const id = link.getAttribute('href');
-      const section = document.querySelector(id);
-      return section ? { link, section } : null;
-    })
-    .filter(Boolean);
+  const sections = links.map(link => {
+    const id = link.getAttribute('href');
+    const section = document.querySelector(id);
+    return section ? { id, link, section } : null;
+  }).filter(Boolean);
 
-  if (!pairs.length) return;
+  if (!sections.length) return;
+
+  let ticking = false;
+  const headerOffset = 105;
 
   function setActive(id){
     links.forEach(link => {
@@ -2164,18 +2155,33 @@
     });
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter(entry => entry.isIntersecting)
-      .sort((a,b) => b.intersectionRatio - a.intersectionRatio);
+  function updateActive(){
+    const marker = window.scrollY + headerOffset;
+    let current = sections[0];
 
-    if (visible.length) setActive('#' + visible[0].target.id);
-  }, {
-    rootMargin: '-28% 0px -58% 0px',
-    threshold: [0, .05, .2, .5]
-  });
+    for (const item of sections){
+      if (item.section.offsetTop <= marker){
+        current = item;
+      } else {
+        break;
+      }
+    }
 
-  pairs.forEach(({section}) => observer.observe(section));
+    setActive(current.id);
+    ticking = false;
+  }
+
+  function requestUpdate(){
+    if (!ticking){
+      ticking = true;
+      requestAnimationFrame(updateActive);
+    }
+  }
+
+  window.addEventListener('scroll', requestUpdate, { passive:true });
+  window.addEventListener('resize', requestUpdate);
+  window.addEventListener('load', updateActive);
+  updateActive();
 })();
 </script>
 </body>
